@@ -11,14 +11,15 @@ export function setUpConnection() {
 };
 
 export function listTools() {
-	return Tool.find();
+	return Tool.find()
+		.then(tools => tools);
 };
 
 export function createTool(data) {
 	const tool = new Tool({
 		title: data.title,
-		value: data.value,
-		date: new Date()
+		date: data.date,
+		value: data.value
 	});
 
 	return tool.save();

@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 
 const ToolSchema = new Schema({
 	title : { type: String },
-	value : { type: Number},
-	date: { type: Date }
+	date: [String ],
+	value : [Number]
 });
 
 const Tool = mongoose.model('Tool', ToolSchema);
