@@ -1,49 +1,29 @@
 import React from 'react';
+import { BrowserRouter as Hashrouter, Switch, Route, Link } from "react-router-dom";
 
 import ToolsStore from '../stores/ToolsStore';
 import ToolsActions from '../actions/ToolsActions';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
+import Dashboard from './Dashboard';
+import AppRouter from '../router/AppRouter';
 
-import ToolsGrid from './ToolsGrid.js';
+import './App.less';
 
-import './App.less'
 
-function getStateFromFlux() {
-	return {
-		isLoading: ToolsStore.isLoading(),
-		tools: ToolsStore.getTools()
-	};
-}
+
+
 
 const App = React.createClass({
-	getInitialState() {
-		return getStateFromFlux();
-	},
 
-	componentWillMount() {
-        ToolsActions.loadTools();
-    },
-
-    componentDidMount() {
-        ToolsStore.addChangeListener(this._onChange);
-    },
-
-    componentWillUnmount() {
-        ToolsStore.removeChangeListener(this._onChange);
-    },
 
 	render() {
-		return (
-			<div className='App'>
-				<h2 className='App__header'>Dashboard</h2>
-				<ToolsGrid tools={this.state.tools} />
-			</div>
-		);
-		
+		<HashRouter>
+    		<AppRouter />
+  		</HashRouter>	
 	},
 
-	_onChange() {
-        this.setState(getStateFromFlux());
-    }
+	
 });
 
 export default App;

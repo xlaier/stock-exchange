@@ -13,5 +13,5 @@ export default {
 
     deleteTool(toolId) {
         return axios.delete(`${apiPrefix}/tools/${noteId}`);
-    }
+    },
 }

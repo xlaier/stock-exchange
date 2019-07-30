@@ -24,7 +24,7 @@ const ToolActions = {
         );
     },
 
-    createNote(tool) {
+    createTool(tool) {
         api.createTool(tool)
         .then(() =>
             this.loadTools()
