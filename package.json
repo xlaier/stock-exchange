@@ -15,7 +15,7 @@
     "classnames": "^2.2.3",
     "cors": "^2.8.5",
     "events": "^1.1.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-session": "^1.16.2",
     "flux": "^2.1.1",
     "jquery": "*",
